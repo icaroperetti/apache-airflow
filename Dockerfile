@@ -1,6 +1,7 @@
 FROM apache/airflow:2.2.3 
 USER root
-RUN pip install markupsafe==2.0.1 \
+RUN /usr/local/bin/python -m pip install --upgrade pip \
+    && pip install markupsafe==2.0.1 \
     && pip install apache-airflow-providers-odbc \
     && pip install pyodbc \
     && pip install apache-airflow-providers-microsoft-mssql \
